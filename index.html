@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jatin Nath - Data Scientist & AI Engineer</title>
+    <title>Jatin Nath - Software Engineer & AI Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="circle circle-1"></div>
         <div class="circle circle-2"></div>
         <div class="circle circle-3"></div>
+        <!-- Liquid Glass Blobs -->
+        <div class="liquid-blob blob-1"></div>
+        <div class="liquid-blob blob-2"></div>
+        <div class="liquid-blob blob-3"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation with Glass Effect -->
+    <nav class="navbar glass-nav">
         <div class="container">
             <div class="nav-brand">
                 <span class="logo-text">JN</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -44,90 +55,103 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <div class="hero-badge glass-badge">
+                        <span class="badge-dot"></span>
+                        <span>Available for opportunities</span>
+                    </div>
                     <h1 class="hero-title">
                         Hi, I'm <span class="gradient-text">Jatin Nath</span>
                     </h1>
-                    <h2 class="hero-subtitle">Data Scientist & AI Engineer</h2>
+                    <h2 class="hero-subtitle typing-effect" id="typingText"></h2>
                     <p class="hero-description">
-                        Building end-to-end AI, AutoML, and MLOps solutions with expertise in Machine Learning, 
-                        Deep Learning, and Generative AI. Passionate about creating scalable, production-ready applications.
+                        CS (AI & Data Science) undergrad building scalable, production-grade systems.
+                        <strong>Hackathon winner</strong> at TetherX (VIT Chennai). Experienced in
+                        full-stack development, REST APIs, Docker, and cloud deployment on AWS.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <a href="#projects" class="btn btn-primary glass-button">
+                            <span>View My Work</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary glass-button">
+                            <span>Get In Touch</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </a>
+                        <a href="https://drive.google.com/your-resume-link" target="_blank"
+                            class="btn btn-outline glass-button">
+                            <span>Resume</span>
+                            <i class="fas fa-download"></i>
+                        </a>
                     </div>
-                    <div class="social-links">
-                        <a href="https://github.com/jatinnathh" target="_blank" class="social-icon">
+                    <!-- Social Links in Liquid Glass Container -->
+                    <div class="hero-socials glass-card">
+                        <a href="https://github.com/jatinnathh" target="_blank" title="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/jatinnath1" target="_blank" class="social-icon">
+                        <a href="https://www.linkedin.com/in/jatinnath1" target="_blank" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://leetcode.com/u/Jatin_Nath/" target="_blank" class="social-icon">
+                        <a href="https://leetcode.com/u/Jatin_Nath/" target="_blank" title="LeetCode">
                             <i class="fas fa-code"></i>
                         </a>
-                        <a href="mailto:jatinnath1111@gmail.com" class="social-icon">
+                        <a href="mailto:jatinnath1111@gmail.com" title="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
-                        <a href="tel:+919643007622" class="social-icon">
-                            <i class="fas fa-phone"></i>
-                        </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <div class="floating-card card-1">
-                            <i class="fas fa-brain"></i>
-                            <span>AI/ML</span>
-                        </div>
-                        <div class="floating-card card-2">
-                            <i class="fas fa-robot"></i>
-                            <span>Deep Learning</span>
-                        </div>
-                        <div class="floating-card card-3">
-                            <i class="fas fa-cloud"></i>
-                            <span>MLOps</span>
-                        </div>
-                        <div class="floating-card card-4">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Data Science</span>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
             </div>
+            <span>Scroll Down</span>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">About Me</h2>
                 <div class="title-underline"></div>
             </div>
-            <div class="about-content">
-                <div class="about-text">
+            <div class="about-content fade-in">
+                <div class="about-text glass-card">
                     <p class="about-description">
-                        I'm a <strong>Data Scientist </strong>building intelligent, scalable AI systems — from AutoML platforms to diffusion-based generative models. 
-                        Turning abstract ideas into working systems. <br>
-                        I specialize in Gen AI,ML, DL, and MLOps, with a strong focus on automation and reproducibility.
-
+                        <strong>Computer Science (AI & Data Science)</strong> undergraduate with strong foundations in
+                        <strong>Data Structures & Algorithms</strong>, <strong>Object-Oriented Programming</strong>,
+                        and <strong>backend engineering</strong>.
                     </p>
                     <p class="about-description">
-                        Some of my key projects include <strong> ModelForge</strong>, an AutoML platform hosted on <strong> AWS</strong>, and
-                        <strong>NeuroFusion</strong> , a custom text-to-image generator from custom diffusion pipelines
+                        <strong>Hackathon winner (TetherX, VIT Chennai)</strong> for building a real-time hospital
+                        workflow automation platform. Experienced in building and deploying scalable, Dockerized
+                        applications with <strong>REST APIs</strong>, <strong>FastAPI</strong>, and
+                        <strong>Node.js/Express</strong>.
+                    </p>
+                    <p class="about-description">
+                        Built <strong>NeuroFusion</strong>, a production-grade Dockerized ML application,
+                        <strong>MediFlow</strong>, a hackathon-winning hospital automation platform, and
+                        <strong>ModelForge</strong>, an AutoML platform deployed on <strong>AWS</strong>.
+                        Proficient in <strong>Python</strong>, <strong>C++</strong>, <strong>JavaScript</strong>,
+                        <strong>SQL</strong>, with hands-on experience in software engineering principles,
+                        version control (Git), and CI/CD workflows.
                     </p>
                     <div class="about-stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number">3+</h3>
+                        <div class="stat-item glass-stat">
+                            <h3 class="stat-number" data-count="4">0</h3>
                             <p class="stat-label">Major Projects</p>
                         </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">70%</h3>
-                            <p class="stat-label">Time Reduction</p>
+                        <div class="stat-item glass-stat">
+                            <h3 class="stat-number" data-count="70">0</h3>
+                            <p class="stat-label">% Time Reduction</p>
                         </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number">2</h3>
+                        <div class="stat-item glass-stat">
+                            <h3 class="stat-number" data-count="1">0</h3>
+                            <p class="stat-label">Hackathon Win</p>
+                        </div>
+                        <div class="stat-item glass-stat">
+                            <h3 class="stat-number" data-count="2">0</h3>
                             <p class="stat-label">Certifications</p>
                         </div>
                     </div>
@@ -139,39 +163,95 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Experience</h2>
                 <div class="title-underline"></div>
             </div>
-            <div class="timeline">
+            <div class="timeline fade-in">
                 <div class="timeline-item">
-                    <div class="timeline-icon">
+                    <div class="timeline-icon glass-icon-circle">
                         <i class="fas fa-briefcase"></i>
                     </div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <div class="timeline-header">
-                            <h3>Intern</h3>
+                            <h3>Software Engineering Intern</h3>
                             <span class="company">Innova Solutions</span>
-                            <span class="period">June 2025 – July 2025</span>
+                            <span class="period">May 2025 – July 2025</span>
                             <span class="location">On-site</span>
                         </div>
                         <ul class="timeline-achievements">
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Developed <strong>NeuroFusion.</strong> A full-stack AI text-to-image application using React Native (Expo), 
-                                FastAPI, and Docker, supporting both web and mobile platforms.
+                                Engineered <strong>NeuroFusion</strong>, a full-stack text-to-image application;
+                                resolved <strong>20+</strong> critical bugs through systematic debugging, improving
+                                stability and user experience across web and mobile.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Designed and implemented a custom diffusion model pipeline with prompt queuing, real-time progress tracking, 
-                                and functionality for both text-to-image and image-to-image generation.
+                                Designed and implemented a <strong>RESTful backend</strong> with <strong>RBAC</strong>,
+                                relational data modeling, and <strong>MySQL</strong>-backed storage supporting
+                                multi-user access control workflows.
                             </li>
                             <li>
                                 <i class="fas fa-check-circle"></i>
-                                Built role-based access control (RBAC), an interactive image gallery, and a searchable prompt history using 
-                                a MySQL backend, ensuring scalability and maintainability.
+                                Built an asynchronous <strong>prompt queuing system</strong> handling <strong>15+
+                                    concurrent requests</strong> via sequential GPU execution, applying software
+                                engineering principles for reliability and throughput.
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Optimized GPU scheduling logic, achieving a <strong>40% reduction in GPU idle
+                                    time</strong> — demonstrating performance profiling and systems-level thinking.
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                Containerized the application using <strong>Docker</strong> and managed source control
+                                with <strong>Git</strong>, ensuring reproducible builds and streamlined team
+                                collaboration.
                             </li>
                         </ul>
+                        <div class="timeline-tags">
+                            <span class="tag glass-tag">FastAPI</span>
+                            <span class="tag glass-tag">Docker</span>
+                            <span class="tag glass-tag">MySQL</span>
+                            <span class="tag glass-tag">React Native</span>
+                            <span class="tag glass-tag">Git</span>
+                            <span class="tag glass-tag">REST API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Achievements</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="achievements-grid fade-in">
+                <div class="achievement-card trophy-card glass-card-special">
+                    <div class="achievement-glow"></div>
+                    <div class="achievement-icon glass-icon-circle">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3 class="achievement-title">🥇 Winner (1st Place)</h3>
+                        <p class="achievement-event">TetherX Hackathon — VIT Chennai</p>
+                        <p class="achievement-year">2026</p>
+                        <p class="achievement-description">
+                            Built <strong>MediFlow</strong>, a real-time hospital inter-department workflow
+                            automation system featuring dual-auth RBAC, WebSocket chat, AI diagnostics,
+                            and automated billing.
+                        </p>
+                        <div class="achievement-tags">
+                            <span class="tag gold-tag glass-tag">1st Place</span>
+                            <span class="tag glass-tag">Next.js</span>
+                            <span class="tag glass-tag">TypeScript</span>
+                            <span class="tag glass-tag">Socket.IO</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -181,19 +261,67 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Featured Projects</h2>
                 <div class="title-underline"></div>
             </div>
-            <div class="projects-grid">
-                <!-- Project 1: ModelForge -->
-                <div class="project-card">
+            <div class="projects-grid fade-in">
+
+                <!-- Project 1: MediFlow -->
+                <div class="project-card featured-project glass-card">
+                    <div class="project-ribbon">
+                        <span>🏆 Hackathon Winner</span>
+                    </div>
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="http://51.21.222.225:8501/" target="_blank" class="project-link">
+                            <a href="https://turbo-s-final.vercel.app/" target="_blank"
+                                class="project-link glass-icon-circle">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
-                            <a href="https://github.com/jatinnathh/MLGenie" target="_blank" class="project-link">
+                            <a href="https://github.com/jatinnathh/TurboS-Final" target="_blank"
+                                class="project-link glass-icon-circle">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                        <div class="project-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">MediFlow — Hospital Workflow Automation</h3>
+                        <p class="project-period">Winner, TetherX Hackathon — VIT Chennai (2026)</p>
+                        <p class="project-description">
+                            Full-stack Next.js/TypeScript platform automating patient workflows across hospital
+                            departments with dual-auth RBAC (Clerk + JWT), REST API routes, and PostgreSQL via Prisma
+                            ORM.
+                        </p>
+                        <ul class="project-highlights">
+                            <li><i class="fas fa-star"></i> Real-time WebSocket chat with Socket.IO</li>
+                            <li><i class="fas fa-star"></i> Inter-department workflow engine with audit logs</li>
+                            <li><i class="fas fa-star"></i> Hugging Face ML + Google Gemini AI integration</li>
+                            <li><i class="fas fa-star"></i> Razorpay automated billing & payments</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span class="tag glass-tag">Next.js</span>
+                            <span class="tag glass-tag">TypeScript</span>
+                            <span class="tag glass-tag">Socket.IO</span>
+                            <span class="tag glass-tag">PostgreSQL</span>
+                            <span class="tag glass-tag">Prisma</span>
+                            <span class="tag glass-tag">Clerk</span>
+                            <span class="tag glass-tag">Gemini AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: ModelForge -->
+                <div class="project-card glass-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="http://51.21.222.225:8501/" target="_blank" class="project-link glass-icon-circle">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="https://github.com/jatinnathh/MLGenie" target="_blank"
+                                class="project-link glass-icon-circle">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
@@ -202,32 +330,34 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">ModelForge - AutoML Platform</h3>
+                        <h3 class="project-title">ModelForge — AutoML Platform</h3>
                         <p class="project-period">July 2025 – August 2025</p>
                         <p class="project-description">
-                            Full-stack AutoML platform deployed on AWS, reducing model development time by 70% through 
-                            no-code automation with advanced analytics modules.
+                            Full-stack AutoML platform deployed on AWS EC2 with modular OOP architecture.
+                            Implemented RESTful API endpoints for model training, evaluation, and retrieval;
+                            automated data preprocessing reducing manual effort by ~70%.
                         </p>
                         <ul class="project-highlights">
-                            <li><i class="fas fa-star"></i> End-to-end automated ML workflows</li>
-                            <li><i class="fas fa-star"></i> Real-time dashboard with dynamic visualizations</li>
-                            <li><i class="fas fa-star"></i> Advanced analytics & model leaderboard</li>
+                            <li><i class="fas fa-star"></i> End-to-end automated ML workflows on AWS</li>
+                            <li><i class="fas fa-star"></i> SOLID principles & maintainable codebase</li>
+                            <li><i class="fas fa-star"></i> RESTful API for model management</li>
                         </ul>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">AWS</span>
-                            <span class="tag">Streamlit</span>
-                            <span class="tag">scikit-learn</span>
-                            <span class="tag">MLOps</span>
+                            <span class="tag glass-tag">Python</span>
+                            <span class="tag glass-tag">AWS EC2</span>
+                            <span class="tag glass-tag">Streamlit</span>
+                            <span class="tag glass-tag">scikit-learn</span>
+                            <span class="tag glass-tag">OOP</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2: NeuroFusion -->
-                <div class="project-card">
+                <!-- Project 3: NeuroFusion -->
+                <div class="project-card glass-card">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="https://github.com/jatinnathh/NeuroFusion" target="_blank" class="project-link">
+                            <a href="https://github.com/jatinnathh/NeuroFusion" target="_blank"
+                                class="project-link glass-icon-circle">
                                 <i class="fab fa-github"></i>
                             </a>
                         </div>
@@ -236,57 +366,23 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">NeuroFusion - AI Text-to-Image</h3>
-                        <p class="project-period">June 2025 – July 2025</p>
+                        <h3 class="project-title">NeuroFusion — AI Text-to-Image</h3>
+                        <p class="project-period">May 2025 – July 2025</p>
                         <p class="project-description">
-                            Full-stack AI application with custom diffusion models for text-to-image and image-to-image generation, 
-                            featuring RBAC and real-time progress tracking.
+                            Production-grade Dockerized ML application with custom diffusion models for
+                            text-to-image and image-to-image generation, featuring RBAC and async prompt queuing.
                         </p>
                         <ul class="project-highlights">
-                            <li><i class="fas fa-star"></i> Custom diffusion model pipeline</li>
-                            <li><i class="fas fa-star"></i> Cross-platform (Web & Mobile)</li>
-                            <li><i class="fas fa-star"></i> Role-based access control</li>
+                            <li><i class="fas fa-star"></i> 15+ concurrent request handling</li>
+                            <li><i class="fas fa-star"></i> 40% GPU idle time reduction</li>
+                            <li><i class="fas fa-star"></i> 20+ bugs resolved, Docker containerized</li>
                         </ul>
                         <div class="project-tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">Diffusion Models</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: Real Estate Price Prediction -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="https://github.com/jatinnathh/MLOps-price-prediciton" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                        <div class="project-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">MLOps Real Estate Prediction</h3>
-                        <p class="project-period">April 2025 – May 2025</p>
-                        <p class="project-description">
-                            MLOps-driven system with modular ML pipelines leveraging MLflow for experiment tracking, 
-                            model versioning, and optimized deployment.
-                        </p>
-                        <ul class="project-highlights">
-                            <li><i class="fas fa-star"></i> Modular ML pipeline architecture</li>
-                            <li><i class="fas fa-star"></i> MLflow integration for tracking</li>
-                            <li><i class="fas fa-star"></i> Hyperparameter tuning optimization</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">ZenML</span>
-                            <span class="tag">MLflow</span>
-                            <span class="tag">scikit-learn</span>
-                            <span class="tag">OOP</span>
+                            <span class="tag glass-tag">React Native</span>
+                            <span class="tag glass-tag">FastAPI</span>
+                            <span class="tag glass-tag">Docker</span>
+                            <span class="tag glass-tag">MySQL</span>
+                            <span class="tag glass-tag">Diffusion Models</span>
                         </div>
                     </div>
                 </div>
@@ -297,153 +393,236 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Skills & Technologies</h2>
                 <div class="title-underline"></div>
             </div>
-            <div class="skills-container">
-                <!-- ML & Data Science -->
-                <div class="skill-category">
-                    <h3 class="category-title">
-                        <i class="fas fa-brain"></i>
-                        Machine Learning & Data Science
-                    </h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-network-wired"></i>
-                            <span>Deep Learning</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-infinity"></i>
-                            <span>MLOps</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-eye"></i>
-                            <span>Computer Vision</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-magic"></i>
-                            <span>Generative AI</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Data Science</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-calculator"></i>
-                            <span>Statistical Analysis</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>Model Deployment</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="skills-container fade-in">
 
-                <!-- Programming Languages -->
-                <div class="skill-category">
+                <!-- Languages -->
+                <div class="skill-category glass-card">
                     <h3 class="category-title">
                         <i class="fas fa-code"></i>
-                        Programming Languages
+                        Languages
                     </h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
+                        <div class="skill-item glass-skill">
                             <i class="fab fa-python"></i>
                             <span>Python</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-file-code"></i>
-                            <span>C</span>
-                        </div>
-                        <div class="skill-item">
+                        <div class="skill-item glass-skill">
                             <i class="fas fa-file-code"></i>
                             <span>C++</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item glass-skill">
                             <i class="fab fa-js"></i>
                             <span>JavaScript</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-code"></i>
+                            <span>TypeScript</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-file-code"></i>
+                            <span>C</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Frameworks & Tools -->
-                <div class="skill-category">
+                <!-- CS Fundamentals -->
+                <div class="skill-category glass-card">
                     <h3 class="category-title">
-                        <i class="fas fa-tools"></i>
-                        Frameworks, Libraries & Tools
+                        <i class="fas fa-graduation-cap"></i>
+                        CS Fundamentals
                     </h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-sitemap"></i>
+                            <span>DSA</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-cubes"></i>
+                            <span>OOP</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-server"></i>
+                            <span>Operating Systems</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-database"></i>
+                            <span>DBMS</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-network-wired"></i>
+                            <span>Computer Networks</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-drafting-compass"></i>
+                            <span>Software Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & APIs -->
+                <div class="skill-category glass-card">
+                    <h3 class="category-title">
+                        <i class="fas fa-server"></i>
+                        Backend & APIs
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-route"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="skill-item glass-skill">
                             <i class="fas fa-bolt"></i>
                             <span>FastAPI</span>
                         </div>
-                        <div class="skill-item">
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-flask"></i>
+                            <span>Flask</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-plug"></i>
+                            <span>REST API</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-broadcast-tower"></i>
+                            <span>Socket.IO</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-leaf"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-elephant"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-gem"></i>
+                            <span>Prisma</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-memory"></i>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="skill-category glass-card">
+                    <h3 class="category-title">
+                        <i class="fas fa-tools"></i>
+                        DevOps & Tools
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS (EC2, S3)</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-triangle-exclamation"></i>
+                            <span>Vercel</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-chart-line"></i>
+                            <span>MLflow</span>
+                        </div>
+                        <div class="skill-item glass-skill">
                             <i class="fas fa-stream"></i>
                             <span>Streamlit</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-brain"></i>
-                            <span>Keras</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-category glass-card">
+                    <h3 class="category-title">
+                        <i class="fas fa-palette"></i>
+                        Frontend
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-skill">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Matplotlib</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-n"></i>
+                            <span>Next.js</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-table"></i>
-                            <span>NumPy</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-code"></i>
+                            <span>TypeScript</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>Pandas</span>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-wind"></i>
+                            <span>Tailwind CSS</span>
                         </div>
-                        <div class="skill-item">
+                    </div>
+                </div>
+
+                <!-- ML/AI Frameworks -->
+                <div class="skill-category glass-card">
+                    <h3 class="category-title">
+                        <i class="fas fa-brain"></i>
+                        ML/AI Frameworks
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-item glass-skill">
                             <i class="fas fa-fire"></i>
                             <span>PyTorch</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-cogs"></i>
-                            <span>Scikit-learn</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-area"></i>
-                            <span>Seaborn</span>
-                        </div>
-                        <div class="skill-item">
+                        <div class="skill-item glass-skill">
                             <i class="fas fa-brain"></i>
                             <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-cogs"></i>
+                            <span>scikit-learn</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-eye"></i>
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-face-smile"></i>
+                            <span>Hugging Face</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-table"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item glass-skill">
+                            <i class="fas fa-calculator"></i>
+                            <span>NumPy</span>
                         </div>
                     </div>
                 </div>
@@ -454,15 +633,15 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Education & Certifications</h2>
                 <div class="title-underline"></div>
             </div>
-            
+
             <!-- Education -->
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">
+            <div class="education-grid fade-in">
+                <div class="education-card glass-card">
+                    <div class="education-icon glass-icon-circle">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="education-content">
@@ -473,26 +652,14 @@
                         <p class="education-period">2023 – 2027 (Expected)</p>
                     </div>
                 </div>
-
-                <div class="education-card">
-                    <div class="education-icon">
-                        <i class="fas fa-school"></i>
-                    </div>
-                    <div class="education-content">
-                        <h3 class="education-degree">High School</h3>
-                        <p class="education-institution">Mount Carmel School</p>
-                        <p class="education-location">New Delhi, India</p>
-                        <p class="education-period">Graduated 2023</p>
-                    </div>
-                </div>
             </div>
 
             <!-- Certifications -->
-            <div class="certifications-section">
+            <div class="certifications-section fade-in">
                 <h3 class="subsection-title">Professional Certifications</h3>
                 <div class="certifications-grid">
-                    <div class="certification-card">
-                        <div class="cert-icon">
+                    <div class="certification-card glass-card">
+                        <div class="cert-icon glass-icon-circle">
                             <i class="fas fa-certificate"></i>
                         </div>
                         <div class="cert-content">
@@ -500,22 +667,22 @@
                             <p class="cert-issuer">Caltech CTME</p>
                             <p class="cert-year">2024</p>
                             <p class="cert-description">
-                                Project-based curriculum covering AI, ML, DL, Data Science, and Generative AI. 
+                                Project-based curriculum covering AI, ML, DL, Data Science, and Generative AI.
                                 Capstone guided by Dr. Rick Hefner; certificate endorsed by Caltech CTME.
                             </p>
                         </div>
                     </div>
 
-                    <div class="certification-card">
-                        <div class="cert-icon">
+                    <div class="certification-card glass-card">
+                        <div class="cert-icon glass-icon-circle">
                             <i class="fas fa-certificate"></i>
                         </div>
                         <div class="cert-content">
-                            <h4 class="cert-title">IBM Data Science Certification</h4>
+                            <h4 class="cert-title">IBM Data Science Professional Certificate</h4>
                             <p class="cert-issuer">IBM</p>
                             <p class="cert-year">2024</p>
                             <p class="cert-description">
-                                Mastered Python for data manipulation, analysis, and visualization. 
+                                Mastered Python for data manipulation, analysis, and visualization.
                                 Issued: June 5, 2024.
                             </p>
                         </div>
@@ -524,46 +691,56 @@
             </div>
 
             <!-- Coursework -->
-            <div class="coursework-section">
+            <div class="coursework-section fade-in">
                 <h3 class="subsection-title">Relevant Coursework</h3>
                 <div class="coursework-grid">
-                    <div class="course-item">
+                    <div class="course-item glass-card">
                         <i class="fas fa-book"></i>
                         <span>Data Structures and Algorithms</span>
                     </div>
-                    <div class="course-item">
+                    <div class="course-item glass-card">
                         <i class="fas fa-book"></i>
                         <span>Database Management Systems</span>
                     </div>
-                    <div class="course-item">
-                        <i class="fas fa-book"></i>
-                        <span>Quantum Computing</span>
-                    </div>
-                    <div class="course-item">
-                        <i class="fas fa-book"></i>
-                        <span>Differential Equations and Transforms</span>
-                    </div>
-                    <div class="course-item">
-                        <i class="fas fa-book"></i>
-                        <span>Optimization For Data Science</span>
-                    </div>
-                    <div class="course-item">
-                        <i class="fas fa-book"></i>
-                        <span>Probability, Statistics and Random Processes</span>
-                    </div>
-                    <div class="course-item">
+                    <div class="course-item glass-card">
                         <i class="fas fa-book"></i>
                         <span>Operating Systems</span>
                     </div>
-                    <div class="course-item">
+                    <div class="course-item glass-card">
                         <i class="fas fa-book"></i>
-                        <span>Calculus and Linear Algebra</span>
+                        <span>Object-Oriented Programming</span>
                     </div>
-                    <div class="course-item">
+                    <div class="course-item glass-card">
+                        <i class="fas fa-book"></i>
+                        <span>Computer Networks</span>
+                    </div>
+                    <div class="course-item glass-card">
+                        <i class="fas fa-book"></i>
+                        <span>Probability, Statistics & Random Processes</span>
+                    </div>
+                    <div class="course-item glass-card">
                         <i class="fas fa-book"></i>
                         <span>Discrete Mathematics</span>
                     </div>
-                    
+                    <div class="course-item glass-card">
+                        <i class="fas fa-book"></i>
+                        <span>Calculus and Linear Algebra</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="languages-section fade-in">
+                <h3 class="subsection-title">Languages</h3>
+                <div class="languages-grid">
+                    <div class="language-item glass-card">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item glass-card">
+                        <span class="language-name">Hindi</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -572,17 +749,18 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header fade-in">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="title-underline"></div>
                 <p class="section-subtitle">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                    vision.
                 </p>
             </div>
-            <div class="contact-content">
+            <div class="contact-content fade-in">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon glass-icon-circle">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-details">
@@ -590,8 +768,8 @@
                             <a href="mailto:jatinnath1111@gmail.com">jatinnath1111@gmail.com</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon glass-icon-circle">
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-details">
@@ -599,8 +777,8 @@
                             <a href="tel:+919643007622">+91 96430 07622</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon glass-icon-circle">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-details">
@@ -608,31 +786,32 @@
                             <p>New Delhi, Delhi, India</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon glass-icon-circle">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Portfolio</h4>
+                            <a href="https://jatinport.vercel.app/" target="_blank">jatin.portfolio.app</a>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon glass-icon-circle">
                             <i class="fab fa-linkedin"></i>
                         </div>
                         <div class="contact-details">
                             <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/jatinnath1" target="_blank">linkedin.com/in/jatinnath1</a>
+                            <a href="https://www.linkedin.com/in/jatinnath1"
+                                target="_blank">linkedin.com/in/jatinnath1</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="contact-item glass-card">
+                        <div class="contact-icon glass-icon-circle">
                             <i class="fab fa-github"></i>
                         </div>
                         <div class="contact-details">
                             <h4>GitHub</h4>
                             <a href="https://github.com/jatinnathh" target="_blank">github.com/jatinnathh</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LeetCode</h4>
-                            <a href="https://leetcode.com/u/Jatin_Nath/" target="_blank">leetcode.com/u/Jatin_Nath</a>
                         </div>
                     </div>
                 </div>
@@ -645,11 +824,12 @@
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2025 Jatin Nath. All rights reserved.</p>
-                <p>Built with passion for AI and Data Science</p>
+                <p>Built with passion for Software Engineering & AI</p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
