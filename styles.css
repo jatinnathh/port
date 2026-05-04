@@ -1511,6 +1511,146 @@ margin-bottom: 0.25rem;
 }
 
 /* ==================== */
+/* Visitor Counter */
+/* ==================== */
+.visitor-counter-wrapper {
+    margin-top: 1.8rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    justify-content: center;
+}
+
+.visitor-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.8rem;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.visitor-counter:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.counter-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    border-radius: 50%;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: counter-icon-glow 3s ease-in-out infinite;
+}
+
+@keyframes counter-icon-glow {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 16px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.05);
+    }
+}
+
+.counter-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+}
+
+.counter-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.counter-digits {
+    display: flex;
+    gap: 3px;
+}
+
+.digit-slot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: 'Poppins', monospace;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.digit-slot.animate {
+    animation: digit-roll-up 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes digit-roll-up {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-5%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.counter-pulse {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: counter-pulse-anim 2s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(74, 222, 128, 0.4);
+    margin-left: 0.3rem;
+}
+
+@keyframes counter-pulse-anim {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+}
+
+/* ==================== */
 /* Scroll Animations */
 /* ==================== */
 .fade-in {

@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initConsoleEasterEgg();
     initLazyLoading();
     initReducedMotion();
+    initVisitorCounter();
 });
 
 // ====================
@@ -877,3 +878,79 @@ window.addEventListener("load", () => {
         }, 300);
     }
 });
+
+// ====================
+// Visitor Counter
+// ====================
+function initVisitorCounter() {
+    const digitsContainer = document.getElementById('counterDigits');
+    if (!digitsContainer) return;
+
+    // Use localStorage to persist count + session check
+    const STORAGE_KEY = 'jn_portfolio_visitor_count';
+    const SESSION_KEY = 'jn_portfolio_session_counted';
+
+    let count = parseInt(localStorage.getItem(STORAGE_KEY)) || 0;
+
+    // Only increment if this is a new session
+    if (!sessionStorage.getItem(SESSION_KEY)) {
+        count++;
+        localStorage.setItem(STORAGE_KEY, count);
+        sessionStorage.setItem(SESSION_KEY, 'true');
+    }
+
+    // Also try to use a free API for more accurate tracking
+    fetchAndUpdateCount(count);
+
+    async function fetchAndUpdateCount(fallbackCount) {
+        let finalCount = fallbackCount;
+
+        try {
+            // Use CountAPI.xyz for persistent cross-device counting
+            const response = await fetch('https://api.countapi.xyz/hit/jatinnath-portfolio/visits');
+            if (response.ok) {
+                const data = await response.json();
+                if (data && data.value) {
+                    finalCount = data.value;
+                }
+            }
+        } catch (e) {
+            // Silently fall back to localStorage count
+            console.log('Using local visitor count');
+        }
+
+        displayCount(finalCount);
+    }
+
+    function displayCount(count) {
+        const countStr = String(count).padStart(5, '0');
+        const slots = digitsContainer.querySelectorAll('.digit-slot');
+
+        // Animate when the counter scrolls into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateDigits(countStr, slots);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        observer.observe(digitsContainer);
+
+        // Also set the digits immediately (no animation) as a baseline
+        slots.forEach((slot, i) => {
+            slot.setAttribute('data-digit', countStr[i]);
+        });
+    }
+
+    function animateDigits(countStr, slots) {
+        slots.forEach((slot, i) => {
+            setTimeout(() => {
+                slot.textContent = countStr[i];
+                slot.classList.add('animate');
+                setTimeout(() => slot.classList.remove('animate'), 500);
+            }, i * 100);
+        });
+    }
+}
