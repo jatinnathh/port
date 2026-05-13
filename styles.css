@@ -1125,6 +1125,119 @@ margin-bottom: 0.25rem;
 }
 
 /* ==================== */
+/* Flagship Project Card */
+/* ==================== */
+.flagship-project {
+    border-color: rgba(0, 212, 255, 0.25) !important;
+    background: linear-gradient(135deg, rgba(0, 20, 35, 0.95) 0%, rgba(10, 10, 10, 0.95) 100%);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.06), 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.flagship-project:hover {
+    border-color: rgba(0, 212, 255, 0.5) !important;
+    box-shadow: 0 0 60px rgba(0, 212, 255, 0.12), 0 30px 80px rgba(0, 0, 0, 0.5) !important;
+    transform: translateY(-8px);
+}
+
+.flagship-ribbon {
+    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%) !important;
+    color: #fff !important;
+    font-size: 0.72rem;
+    letter-spacing: 0.5px;
+}
+
+.flagship-inner {
+    display: flex;
+    gap: 0;
+}
+
+.flagship-image {
+    width: 260px;
+    min-width: 260px;
+    height: auto !important;
+    min-height: 280px;
+    background: linear-gradient(135deg, #00131e 0%, #0a0a1a 100%) !important;
+    border-bottom: none !important;
+    border-right: 1px solid rgba(0, 212, 255, 0.12);
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flagship-icon {
+    font-size: 5rem !important;
+    background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: none !important;
+    animation: flagship-pulse 3s ease-in-out infinite;
+}
+
+@keyframes flagship-pulse {
+    0%, 100% { filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5)); }
+    50%       { filter: drop-shadow(0 0 28px rgba(124, 58, 237, 0.7)); }
+}
+
+.flagship-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    background: rgba(0, 212, 255, 0.12);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+    animation: badge-blink 2.5s ease-in-out infinite;
+}
+
+@keyframes badge-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.6; }
+}
+
+.flagship-content {
+    padding: 2rem 2.2rem !important;
+    flex: 1;
+}
+
+.flagship-header {
+    margin-bottom: 0.6rem;
+}
+
+.flagship-title {
+    font-size: 1.7rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.3rem !important;
+}
+
+.live-link {
+    color: #00d4ff !important;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.live-link:hover {
+    color: #7c3aed !important;
+    text-decoration: underline;
+}
+
+.live-link i {
+    font-size: 0.7rem;
+    margin-left: 2px;
+}
+
+/* ==================== */
 /* Skills Section */
 /* ==================== */
 .skills {
@@ -2186,4 +2299,29 @@ margin-bottom: 0.25rem;
 
 @media (max-width:900px) {
     /* Hero 3D layout removed - single column layout now */
+}
+
+/* ==================== */
+/* Flagship Responsive   */
+/* ==================== */
+@media (max-width: 768px) {
+    .flagship-inner {
+        flex-direction: column;
+    }
+
+    .flagship-image {
+        width: 100%;
+        min-width: 0;
+        min-height: 180px;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+    }
+
+    .flagship-title {
+        font-size: 1.35rem !important;
+    }
+
+    .flagship-content {
+        padding: 1.5rem !important;
+    }
 }
