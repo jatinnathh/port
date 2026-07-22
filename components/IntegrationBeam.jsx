@@ -74,7 +74,7 @@ export function IntegrationBeam({ className }) {
             <SiDocker size={24} color="#2496ED" />
           </Circle>
           <Circle ref={div7Ref}>
-            <SiPytorch size={24} color="#EE4C2C" />
+            <SiNodedotjs size={24} color="#0a8110ff" />
           </Circle>
         </div>
       </div>
