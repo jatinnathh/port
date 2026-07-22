@@ -78,8 +78,9 @@ export function VideoText({
   textAnchor = "middle",
   dominantBaseline = "middle",
   fontFamily = "sans-serif",
-  as: Component = "div",
+  as = "div",
 }: VideoTextProps) {
+  const Component = as as any
   const [svgMask, setSvgMask] = useState("")
   const content = React.Children.toArray(children).join("")
 
