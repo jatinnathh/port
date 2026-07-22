@@ -1,8 +1,14 @@
 'use client';
 
 import { motion } from 'motion/react';
+import dynamic from 'next/dynamic';
 import SectionHeader from './SectionHeader';
 import './Projects.css';
+
+const ScrollDissolveReveal = dynamic(
+  () => import('./ScrollDissolveReveal').then((mod) => mod.ScrollDissolveReveal),
+  { ssr: false }
+);
 
 const projects = [
   {
@@ -13,6 +19,7 @@ const projects = [
     liveLabel: 'jatin-dsagent.vercel.app',
     githubUrl: 'https://github.com/jatinnathh/DSAgent',
     icon: 'fas fa-robot',
+    image: '/DSAgent.png',
     description:
       'AI-powered data science platform that automates the full ML workflow — from raw CSV upload to trained, compared models. Combines a Next.js 16 frontend with a FastAPI + Python ML backend, connected through an LLM-powered ReAct agent that reasons about your data and calls 30+ real Python tools.',
     highlights: [
@@ -37,6 +44,7 @@ const projects = [
     liveUrl: 'https://turbo-s-final.vercel.app/',
     githubUrl: 'https://github.com/jatinnathh/TurboS-Final',
     icon: 'fas fa-hospital',
+    image: '/Mediflow.png',
     ribbon: '🏆 Hackathon Winner',
     description:
       'Full-stack Next.js/TypeScript platform automating patient workflows across hospital departments with dual-auth RBAC (Clerk + JWT), REST API routes, and PostgreSQL via Prisma ORM.',
@@ -55,6 +63,7 @@ const projects = [
     liveUrl: 'https://turbo-s-medifi.vercel.app',
     githubUrl: 'https://github.com/jatinnathh/turbos-medifi',
     icon: 'fas fa-microphone-alt',
+    image: '/medifi.png',
     description:
       'AI-powered multilingual voice consultation platform for Healthcare & Finance. Transforms live doctor–patient voice sessions into structured, color-coded clinical/financial reports with automated follow-up calls and multi-portal access.',
     highlights: [
@@ -66,12 +75,31 @@ const projects = [
     tags: ['Next.js 16', 'TypeScript', 'Prisma', 'NeonDB', 'Groq / LLaMA 3', 'Sarvam AI', 'HuggingFace', 'Twilio'],
   },
   {
+    id: 'archicv',
+    title: 'Archi — Real-Time Spatial Planning via CV',
+    period: '2026',
+    liveUrl: 'https://archi-cv.vercel.app',
+    githubUrl: 'https://github.com/jatinnathh/archi.cv',
+    icon: 'fas fa-building',
+    image: '/Archi-cv.png',
+    description:
+      'Trained a custom YOLOv8 model from scratch on a self-collected, manually-annotated dataset of 7 building-type classes across varied lighting and layout configurations; production threshold tuned at 0.40 confidence, running at ~28 fps.',
+    highlights: [
+      'Custom YOLOv8 model trained on self-collected dataset',
+      '7 building-type classes with varied lighting conditions',
+      'Production-tuned at 0.40 confidence threshold',
+      'Real-time inference at ~28 fps',
+    ],
+    tags: ['Computer Vision', 'YOLOv8', 'Python', 'Machine Learning'],
+  },
+  {
     id: 'modelforge',
     title: 'ModelForge — AutoML Platform',
     period: 'July 2025 – August 2025',
     liveUrl: 'http://51.21.222.225:8501/',
     githubUrl: 'https://github.com/jatinnathh/MLGenie',
     icon: 'fas fa-cogs',
+    image: '/ModelForge.png',
     description:
       'Full-stack AutoML platform deployed on AWS EC2 with modular OOP architecture. Implemented RESTful API endpoints for model training, evaluation, and retrieval; automated data preprocessing reducing manual effort by ~70%.',
     highlights: [
@@ -88,6 +116,7 @@ const projects = [
     liveUrl: 'http://51.21.222.225/',
     githubUrl: 'https://github.com/jatinnathh/NeuroFusion',
     icon: 'fas fa-magic',
+    image: '/neuro.png',
     description:
       'Production-grade Dockerized ML application with custom diffusion models for text-to-image and image-to-image generation, featuring RBAC and async prompt queuing.',
     highlights: [
@@ -119,12 +148,12 @@ function ProjectCard({ project, index }) {
         <div className="proj__links">
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="proj__link-btn" title="Live Demo">
-              <i className="fas fa-external-link-alt" />
+              <i className="fas fa-external-link-alt " /> Live Demo
             </a>
           )}
           {project.githubUrl && (
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="proj__link-btn" title="GitHub">
-              <i className="fab fa-github" />
+              <i className="fab fa-github" /> GitHub Link
             </a>
           )}
         </div>
@@ -170,6 +199,16 @@ export default function Projects() {
       <div className="container">
         <SectionHeader title="Featured Projects" />
 
+        {/* Scroll Dissolve Image Showcase */}
+        <div style={{ marginBottom: '3rem' }}>
+          <ScrollDissolveReveal
+            items={projects}
+            className=""
+            containerClassName=""
+          />
+        </div>
+
+        {/* Card grid below */}
         <div className="proj__grid">
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />

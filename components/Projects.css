@@ -65,17 +65,19 @@
 }
 
 .proj__link-btn {
-  width: 36px;
   height: 36px;
-  display: flex;
+  padding: 0 0.85rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   border-radius: 10px;
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
   color: var(--text-secondary);
   font-size: 0.85rem;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .proj__link-btn:hover {
