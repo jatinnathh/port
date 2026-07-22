@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import GooeyNav from './GooeyNav';
+import { CreepyButton } from './ui/creepy-button';
 import './Navbar.css';
 
 const navLinks = [
@@ -57,7 +58,7 @@ export default function Navbar() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  const gooeyItems = navLinks.map((link) => ({
+  const gooeyItems = navLinks.filter(link => link.label !== 'Contact').map((link) => ({
     label: link.label,
     href: link.href,
     onClick: handleNavClick,
@@ -82,6 +83,11 @@ export default function Navbar() {
             timeVariance={800}
             colors={[1, 2, 3, 1, 2, 3, 1, 4]}
           />
+          <div className="hidden md:block" style={{ marginLeft: '1rem' }}>
+            <CreepyButton onClick={() => handleNavClick('#contact')}>
+              Contact
+            </CreepyButton>
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -100,16 +106,24 @@ export default function Navbar() {
       <ul className={`navbar__menu ${mobileOpen ? 'navbar__menu--open' : ''}`}>
         {navLinks.map((link, i) => (
           <li key={link.href}>
-            <a
-              href={link.href}
-              className={`navbar__link ${activeIndex === i ? 'navbar__link--active' : ''}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(link.href);
-              }}
-            >
-              {link.label}
-            </a>
+            {link.label === 'Contact' ? (
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem', width: '100%' }}>
+                <CreepyButton onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}>
+                  Contact
+                </CreepyButton>
+              </div>
+            ) : (
+              <a
+                href={link.href}
+                className={`navbar__link ${activeIndex === i ? 'navbar__link--active' : ''}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }}
+              >
+                {link.label}
+              </a>
+            )}
           </li>
         ))}
       </ul>

@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import RotatingText from './RotatingText';
+import { MagneticDock } from './ui/magnetic-dock';
 import './Hero.css';
 
 const socials = [
@@ -85,18 +86,23 @@ export default function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.85, duration: 0.5 }}
           >
-            {socials.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target={social.href.startsWith('mailto') ? undefined : '_blank'}
-                rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                className="hero__social-link"
-                title={social.label}
-              >
-                <i className={social.icon} />
-              </a>
-            ))}
+            <MagneticDock
+              variant="solid"
+              iconSize={64}
+              className="!px-4 !py-2"
+              items={socials.map((social) => ({
+                id: social.label.toLowerCase(),
+                label: social.label,
+                icon: <i className={social.icon} style={{ fontSize: '2rem' }} />,
+                onClick: () => {
+                  if (social.href.startsWith('mailto')) {
+                    window.location.href = social.href;
+                  } else {
+                    window.open(social.href, '_blank', 'noopener,noreferrer');
+                  }
+                },
+              }))}
+            />
           </motion.div>
         </motion.div>
 

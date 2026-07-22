@@ -38,7 +38,9 @@
 
 /* GooeyNav wrapper — desktop only */
 .navbar__gooey-wrap {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /* Mobile menu fallback */
