@@ -17,7 +17,7 @@ const socials = [
 export default function Hero() {
   return (
     <section id="home" className="hero relative overflow-hidden">
-      <IntegrationBeam className="absolute left-[-600px] top-1/3 -translate-y-1/2 -z-10 opacity-90 pointer-events-none" />
+      <IntegrationBeam className="absolute left-35 -translate-x-[30%] md:-translate-x-1/4 top-1/3 -translate-y-1/2 -z-10 opacity-90 pointer-events-none w-full max-w-[700px]" />
       <div className="container hero__container">
         <motion.div
           className="hero__content"
