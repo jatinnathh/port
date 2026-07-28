@@ -81,7 +81,7 @@ export default function Navbar() {
             initialActiveIndex={activeIndex}
             animationTime={600}
             timeVariance={800}
-            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+            colors={['#9333ea']}
           />
           <div className="hidden md:block" style={{ marginLeft: '1rem' }}>
             <CreepyButton onClick={() => handleNavClick('#contact')}>

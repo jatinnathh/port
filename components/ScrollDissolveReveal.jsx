@@ -210,9 +210,9 @@ function Scene({ images, scrollYProgress, onIndexChange }) {
       u.uTexture.value = texF;
       const [w,h] = imgDim(texF); u.uImageResolution.value.set(w,h);
       u.uDissolve.value = local;
-      u.uGrayscale.value = Math.min(1.0, local / 0.4);
-      u.uEdgeIntensity.value = local * 0.5;
-      u.uEdgeBrightness.value = 1.0 - local;
+      u.uGrayscale.value = 0.0;
+      u.uEdgeIntensity.value = 0.0;
+      u.uEdgeBrightness.value = 0.0;
     }
     if (backRef.current) {
       const u = backRef.current.uniforms;
@@ -220,9 +220,9 @@ function Scene({ images, scrollYProgress, onIndexChange }) {
       u.uTexture.value = texB;
       const [w,h] = imgDim(texB); u.uImageResolution.value.set(w,h);
       const acc = Math.min(1.0, local * 1.1);
-      u.uEdgeIntensity.value = 0.6 * (1.0 - acc);
-      u.uDarkness.value = 1.0 - acc;
-      u.uGrayscale.value = 1.0 - acc;
+      u.uEdgeIntensity.value = 0.0;
+      u.uDarkness.value = 0.0;
+      u.uGrayscale.value = 0.0;
     }
   });
 

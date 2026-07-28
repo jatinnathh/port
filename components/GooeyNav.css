@@ -45,7 +45,7 @@
   margin: 0;
   position: relative;
   z-index: 3;
-  color: rgb(193, 32, 32);
+  color: #9333ea;
   text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
-  box-shadow: 0 0 0.5px 1.5px rgb(255, 1, 1);
+  box-shadow: 0 0 0.5px 1.5px #a855f7;
 }
 
 .gooey-nav-container nav ul li::after {
@@ -80,7 +80,7 @@
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: white;
+  background: #9333ea;
   opacity: 0;
   transform: scale(0);
   transition: all 0.3s ease;
@@ -88,7 +88,7 @@
 }
 
 .gooey-nav-container nav ul li.active {
-  color: black;
+  color: white;
   text-shadow: none;
 }
 
@@ -116,7 +116,7 @@
 }
 
 .gooey-nav-container .effect.text.active {
-  color: black;
+  color: white;
 }
 
 .gooey-nav-container .effect.filter {
@@ -127,7 +127,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: white;
+  background: #9333ea;
   transform: scale(0);
   opacity: 0;
   z-index: -1;

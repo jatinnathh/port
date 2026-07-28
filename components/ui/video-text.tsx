@@ -62,7 +62,7 @@ export interface VideoTextProps {
    * The element type to render for the text
    * @default "div"
    */
-  as?: React.ElementType<unknown>
+  as?: React.ElementType
 }
 
 export function VideoText({
@@ -80,7 +80,7 @@ export function VideoText({
   fontFamily = "sans-serif",
   as = "div",
 }: VideoTextProps) {
-  const Component = as as unknown
+  const Component = as
   const [svgMask, setSvgMask] = useState("")
   const content = React.Children.toArray(children).join("")
 
