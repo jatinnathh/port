@@ -5,14 +5,11 @@ import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { 
   SiAnthropic, 
-  SiNotion, 
   SiPython, 
   SiReact, 
   SiNodedotjs, 
-  SiNextdotjs, 
   SiDocker, 
-  SiGithub, 
-  SiPytorch 
+  SiGithub 
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 

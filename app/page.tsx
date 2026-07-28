@@ -9,10 +9,12 @@ import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import VisitNotifier from "@/components/VisitNotifier";
 
 export default function Home() {
   return (
     <>
+      <VisitNotifier />
       <HyperspeedBackground />
       <Navbar />
       <main style={{ position: "relative", zIndex: 2 }}>
@@ -29,3 +31,4 @@ export default function Home() {
     </>
   );
 }
+

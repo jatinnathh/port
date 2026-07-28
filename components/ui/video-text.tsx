@@ -1,6 +1,6 @@
 "use client"
 
-import React, { ElementType, ReactNode, useEffect, useState } from "react"
+import React, { ReactNode, useEffect, useState } from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -62,7 +62,7 @@ export interface VideoTextProps {
    * The element type to render for the text
    * @default "div"
    */
-  as?: React.ElementType<any>
+  as?: React.ElementType<unknown>
 }
 
 export function VideoText({
@@ -80,7 +80,7 @@ export function VideoText({
   fontFamily = "sans-serif",
   as = "div",
 }: VideoTextProps) {
-  const Component = as as any
+  const Component = as as unknown
   const [svgMask, setSvgMask] = useState("")
   const content = React.Children.toArray(children).join("")
 

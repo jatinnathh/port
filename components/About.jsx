@@ -1,8 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import SectionHeader from './SectionHeader';
+import PixelTransition from './PixelTransition';
 import './About.css';
 
 const stats = [
@@ -24,7 +26,6 @@ function AnimatedCounter({ target, suffix }) {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated.current) {
           hasAnimated.current = true;
-          let start = 0;
           const duration = 2000;
           const startTime = performance.now();
 
@@ -51,19 +52,81 @@ function AnimatedCounter({ target, suffix }) {
 }
 
 export default function About() {
+  const handlePixelHover = async () => {
+    try {
+      await fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          event: 'Pixel Card Hover',
+          scenario: 'User Interaction',
+          result: 'Hovered over the pixel card',
+          details: 'A user hovered over the pixel transition card in the About Me section.',
+        }),
+      });
+    } catch (error) {
+      console.error('Failed to notify hover:', error);
+    }
+  };
+
   return (
     <section id="about">
       <div className="container">
         <SectionHeader title="About Me" />
 
-        <motion.div
-          className="about__card glass-card"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-        >
-          <p className="about__text">
+        <div className="about__content">
+          <motion.div 
+            className="about__image-container"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6 }}
+          >
+            <PixelTransition
+              firstContent={
+                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                  <Image
+                    src="./cat.jpg"
+                    alt="default pixel transition content, a cat!"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    unoptimized
+                  />
+                </div>
+              }
+              secondContent={
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "grid",
+                    placeItems: "center",
+                    backgroundColor: "#111"
+                  }}
+                >
+                  <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffff" }}>Meow!</p>
+                </div>
+              }
+              gridSize={8}
+              pixelColor="#ffffff"
+              once={false}
+              animationStepDuration={0.4}
+              className="custom-pixel-card"
+              onHover={handlePixelHover}
+              style={{ flex: 1, height: '100%', minHeight: '350px' }}
+            />
+            <p style={{ textAlign: 'center', marginTop: '1rem', color: '#a1a1aa', fontSize: '0.9rem' }}>
+              Psst, hover the card!
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="about__card glass-card"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6 }}
+          >          <p className="about__text">
             <strong>Computer Science (AI & Data Science)</strong> undergraduate with strong foundations in{' '}
             <strong>Data Structures & Algorithms</strong>, <strong>Object-Oriented Programming</strong>, and{' '}
             <strong>backend engineering</strong>.
@@ -94,7 +157,9 @@ export default function About() {
             ))}
           </div>
         </motion.div>
+        </div>
       </div>
+
     </section>
   );
 }

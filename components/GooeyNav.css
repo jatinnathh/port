@@ -45,7 +45,7 @@
   margin: 0;
   position: relative;
   z-index: 3;
-  color: white;
+  color: rgb(193, 32, 32);
   text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
-  box-shadow: 0 0 0.5px 1.5px white;
+  box-shadow: 0 0 0.5px 1.5px rgb(255, 1, 1);
 }
 
 .gooey-nav-container nav ul li::after {

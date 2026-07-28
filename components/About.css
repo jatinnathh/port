@@ -1,7 +1,25 @@
+.about__content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.about__image-container {
+  position: absolute;
+  /* Change left to move horizontally. Negative goes further left */
+  left: -13rem; 
+  /* Change top to move vertically. Lower percentage goes up */
+  top: 20%;
+  transform: translateY(-50%);
+  z-index: 13;
+}
+
 .about__card {
   padding: 2.5rem;
   max-width: 850px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .about__text {
@@ -53,6 +71,12 @@
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+
+@media (max-width: 1300px) {
+  .about__image-container {
+    display: none; /* Hide if there's no space on the left */
+  }
 }
 
 @media (max-width: 640px) {
