@@ -62,7 +62,8 @@ export interface VideoTextProps {
    * The element type to render for the text
    * @default "div"
    */
-  as?: React.ElementType<any>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  as?: any
 }
 
 export function VideoText({
