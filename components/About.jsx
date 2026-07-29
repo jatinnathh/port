@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'motion/react';
 import SectionHeader from './SectionHeader';
 import PixelTransition from './PixelTransition';
+import MusicPlayer from './ui/music-player';
 import './About.css';
 
 const stats = [
@@ -99,12 +100,25 @@ export default function About() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    display: "grid",
-                    placeItems: "center",
-                    backgroundColor: "#111"
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    backgroundColor: "#111",
+                    padding: "20px",
+                    boxSizing: "border-box"
                   }}
                 >
-                  <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffff" }}>Meow!</p>
+                  <div style={{ flex: 1, display: "grid", placeItems: "center" }}>
+                    <p style={{ fontWeight: 900, fontSize: "3rem", color: "#ffffff" }}>Meow!</p>
+                  </div>
+                  <div style={{ width: "100%", padding: "0 10px", display: "flex", justifyContent: "center" }}>
+                    <MusicPlayer
+                      tracks={[{ title: "chipi chipi chapa chapa", artist: "The Cat", src: "/audio.mp3", artwork: "/cat1.jpg" }]}
+                      accentColor="#ff6a00"
+                      className="w-full"
+                    />
+                  </div>
                 </div>
               }
               gridSize={8}

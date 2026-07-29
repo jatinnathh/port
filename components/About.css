@@ -9,11 +9,16 @@
 .about__image-container {
   position: absolute;
   /* Change left to move horizontally. Negative goes further left */
-  left: -13rem; 
+  left: -18rem; 
   /* Change top to move vertically. Lower percentage goes up */
   top: 20%;
   transform: translateY(-50%);
   z-index: 13;
+}
+
+.custom-pixel-card {
+  width: 440px !important;
+  max-width: 100% !important;
 }
 
 .about__card {
