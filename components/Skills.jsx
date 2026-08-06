@@ -6,7 +6,6 @@ import SectionHeader from './SectionHeader';
 import BorderGlow from './BorderGlow';
 import './Skills.css';
 
-const InfiniteMenu = dynamic(() => import('./InfiniteMenu'), { ssr: false });
 
 const menuItems = [
   {
@@ -134,16 +133,7 @@ export default function Skills() {
       <div className="container">
         <SectionHeader title="Skills & Technologies" />
 
-        {/* InfiniteMenu 3D visualization */}
-        <motion.div
-          className="skills__menu-wrap"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <InfiniteMenu items={menuItems} />
-        </motion.div>
+        
 
         {/* Detailed skill grid */}
         <div className="skills__grid">
